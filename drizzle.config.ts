@@ -4,8 +4,8 @@ import { defineConfig } from 'drizzle-kit';
 config({ path: `.env.${process.env.NODE_ENV === 'production' ? 'production' : 'development'}` });
 
 export default defineConfig({
-	schema: './src/db/schema.ts',
-	out: './src/db/migrations',
+	schema: './src/lib/server/db/schema.ts',
+	out: './migrations',
 	dialect: 'sqlite',
 	driver: 'turso',
 	dbCredentials: {
