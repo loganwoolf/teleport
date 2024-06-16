@@ -5,6 +5,6 @@ import { createClient } from '@libsql/client';
 export const db = drizzle(
 	createClient({
 		url: TURSO_DATABASE_URL,
-		authToken: TURSO_AUTH_TOKEN
-	})
+		authToken: TURSO_AUTH_TOKEN,
+	}),
 );

@@ -5,7 +5,7 @@ export const usersTable = sqliteTable('users', {
 	id: integer('id').primaryKey(),
 	name: text('name').notNull(),
 	age: integer('age').notNull(),
-	email: text('email').unique().notNull()
+	email: text('email').unique().notNull(),
 });
 
 export const postsTable = sqliteTable('posts', {
@@ -18,7 +18,7 @@ export const postsTable = sqliteTable('posts', {
 	createdAt: text('created_at')
 		.default(sql`(CURRENT_TIMESTAMP)`)
 		.notNull(),
-	updateAt: integer('updated_at', { mode: 'timestamp' }).$onUpdate(() => new Date())
+	updateAt: integer('updated_at', { mode: 'timestamp' }).$onUpdate(() => new Date()),
 });
 
 export type InsertUser = typeof usersTable.$inferInsert;
